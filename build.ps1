@@ -146,7 +146,7 @@ Expand-Archive -Force -Path "$cache\julia.zip" -DestinationPath "$mount\"
 if (Test-Path -Path "$mount\julia") {
     Remove-Item -Recurse -Path "$mount\julia"
 }
-Move-Item -Path "$mount\julia-b84990e1ac" -Destination "$mount\julia"
+Move-Item -Path "$mount\julia-1.5.3" -Destination "$mount\julia"
 
 if (!(Test-Path -Path "$mount\julia-depot")) {
     New-Item -Path "$mount\julia-depot" -ItemType Directory
