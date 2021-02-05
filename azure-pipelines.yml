@@ -38,13 +38,3 @@ steps:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)/'
     artifactName: 'main'
     publishLocation: 'Container'
-
-- task: CopyFilesOverSSH@0
-  displayName: 'Upload to VPS'
-  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-  inputs:
-    sshEndpoint: 'ahornvhd@vps.0x0ade.ga'
-    sourceFolder: '$(Build.ArtifactStagingDirectory)/'
-    contents: '**'
-    targetFolder: '/home/ahornvhd/public/'
-    readyTimeout: '20000'

@@ -33,8 +33,8 @@ end
 
 Pkg.instantiate()
 
-install_or_update("https://github.com/CelestialCartographers/Maple.git", "Maple")
-install_or_update("https://github.com/CelestialCartographers/Ahorn.git", "Ahorn")
+install_or_update("https://github.com.cnpmjs.org/CelestialCartographers/Maple.git", "Maple")
+install_or_update("https://github.com.cnpmjs.org/CelestialCartographers/Ahorn.git", "Ahorn")
 
 Pkg.instantiate()
 Pkg.API.precompile()
