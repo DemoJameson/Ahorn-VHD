@@ -170,21 +170,6 @@ if ($Redist) {
 
 
 
-# Line ending config mismatches cause some fun issues.
-
-if ((Test-Path (& where.exe git.exe 2>&1 | %{ "$_" })) -eq $true) {
-    Write-Output ""
-    Write-Output "Fixing git config for general registry"
-    Push-Location -Path "$mount\julia-depot\registries\General"
-    Write-Output "core.autocrlf: $(& git.exe config --global core.autocrlf)"
-    & git.exe config core.autocrlf "$(& git.exe config --global core.autocrlf)"
-    Write-Output "core.whitespace: $(& git.exe config --global core.whitespace)"
-    & git.exe config core.whitespace "$(& git.exe config --global core.whitespace)"
-    Pop-Location
-}
-
-
-
 # File permissions are FUN. Perms set on the mount point aren't inherited properly...
 Write-Host ""
 Write-Output "Fixing perms for dir $mount"
