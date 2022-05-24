@@ -19,7 +19,6 @@ steps:
   displayName: 'Run build.ps1'
   inputs:
     filePath: 'build.ps1'
-    arguments: '-Redist'
 
 - task: ArchiveFiles@2
   displayName: 'Create ahornvhd.7z'
