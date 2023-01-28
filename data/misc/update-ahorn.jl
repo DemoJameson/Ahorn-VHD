@@ -33,6 +33,9 @@ end
 
 Pkg.instantiate()
 
+Pkg.add(name="Gtk", version="1.2.2")
+Pkg.pin("Gtk")
+
 install_or_update("https://gitee.com/demojameson_personal/Maple.git", "Maple")
 install_or_update("https://gitee.com/demojameson_personal/Ahorn.git", "Ahorn")
 
